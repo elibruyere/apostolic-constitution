@@ -2,7 +2,7 @@
 <html lang="la">
 <head>
   <meta charset="UTF-8">
-  <title>In Bangladesa nova conditur dioecesis Barisalensis</title>
+  <title>Analysis Latina - Constitutio Barisalensis</title>
   <style>
     body {
       font-family: serif;
@@ -10,29 +10,88 @@
       padding: 2em;
       background: #f8f9fa;
     }
+    .word {
+      cursor: pointer;
+      padding: 0 2px;
+      border-radius: 4px;
+    }
+    .nominative { background-color: #fff59d; }
+    .accusative { background-color: #a5d6a7; }
+    .genitive { background-color: #90caf9; }
+    .dative { background-color: #ffcc80; }
+    .ablative { background-color: #ef9a9a; }
+    #info-box {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 1em;
+      font-size: 0.9em;
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <p>
+    <span class="word nominative" data-info="Franciscus Episcopus: sujet nominatif — François, Évêque">Franciscus Episcopus</span>
+    <span class="word nominative" data-info="Servus: apposition au sujet — Serviteur">Servus</span>
+   <span class="word genitive" data-info="Servorum: des serviteurs">Servorum</span>
+   <span class="word genitive" data-info="Dei: de Dieu">Dei</span>
+    <span class="word accusative" data-info="ad: préposition + accusatif — en vue de">ad</span>
+    <span class="word accusative" data-info="perpetuam : adjectif accusatif — perpétuel (avec memoriam)">perpetuam</span>
+    <span class="word accusative" data-info=" rei : genitif — de la chose">rei</span>
+    <span class="word accusative" data-info=" memoriam: accusatif — le souvenir">memoriam</span>
+    <span class="word conjunction" data-info="Cum: conjonction — lorsque, puisque">Cum</span>
+    <span class="word accusative" data-info="ad: préposition + accusatif — pour">ad</span>
+    <span class="word accusative" data-info="aptius...provehendam: comparatif neutre/infinitif — pour promouvoir plus adéquatement">aptius...provehendam</span>
+    <span class="word accusative" data-info="aeternam...salutem: accusatif — le salut éternel">aeternam </span>
+    <span class="word gentitive" data-info="du troupeau du seigneur (double génitif)">dominici gregis</span>
+    <span class="word accusative" data-info="aeternam...salutem: accusatif — le salut éternel">salutem</span>
+    <span class="word infinitive" data-info="consulendum: gérondif passif — pour pourvoir à">consulendum</span>
+    <span class="word dative" data-info="eiusque regimini: datif — au gouvernement de celui-ci">eiusque regimini</span>
+    <span class="word adverb" data-info="facilius et efficacius: comparatif adverbial — plus facilement et efficacement">facilius et efficacius</span>
+    <span class="word verb" data-info="esset petitum: plus-que-parfait passif — il avait été demandé">petitum esset</span>
+    <span class="word adverb" data-info="nuper: adverbe — récemment">nuper</span>
+    <span class="word conjunction" data-info="ut...divideretur: subjonctif final — afin que fût divisée">ut...divideretur</span>
+    <span class="word nominative" data-info="dioecesis Chittagongensis: sujet — le diocèse de Chittagong">dioecesis Chittagongensis</span>,
+    <span class="word preposition" data-info="in: préposition + ablatif — au Bangladesh">in Bangladesa</span>,
+    <span class="word adverb" data-info="ita...ut: corrélatif — de sorte que">ita...ut</span>
+    <span class="word accusative" data-info="territorium...abstraheretur: subjonctif — le territoire fût séparé">territorium Divisionum civilium Barisal et Dhaka</span>
+    <span class="word preposition" data-info="a: préposition + ablatif — de">a</span>
+    <span class="word ablative" data-info="memorata dioecesi: ablatif — du diocèse mentionné">memorata dioecesi</span>
+    <span class="word verb" data-info="abstraheretur: subjonctif imparfait passif — fût détaché">abstraheretur</span>
+    <span class="word conjunction" data-info="et: conjonction — et">et</span>
+    <span class="word verb" data-info="constitueretur: subjonctif imparfait passif — fût constitué">constitueretur</span>,
+    <span class="word accusative" data-info="novam dioecesim: COD — un nouveau diocèse">novam dioecesim</span>,
+    <span class="word adjective" data-info="Barisalensem nuncupandam: adjectif verbal — devant être appelée de Barisal">Barisalensem nuncupandam</span>,
+    <span class="word nominative" data-info="Congregatio...Evangelizatione: sujet — la Congrégation pour l'Évangélisation des Peuples">Congregatio pro Gentium Evangelizatione</span>,
+    <span class="word ablative" data-info="omnibus...perpensis: ablatif absolu — toutes choses ayant été mûrement pesées">omnibus mature perpensis</span>
+    <span class="word participle" data-info="habito...voto: ablatif absolu — après avoir recueilli l'avis favorable">habitoque pariter faventi voto</span>
+    <span class="word genitive" data-info="Venerabilis Fratris Georgii Kocherry: génitif — du vénérable frère Georges Kocherry">Venerabilis Fratris Georgii Kocherry</span>,
+    <span class="word genitive" data-info="Archiepiscopi...Nuntii: génitif — archevêque et nonce apostolique au Bangladesh">Archiepiscopi titulo Othonensis atque in Bangladesa Apostolici Nuntii</span>,
+    <span class="word accusative" data-info="admotam postulationem: accusatif — la demande présentée">admotam postulationem</span>,
+    <span class="word accusative" data-info="in bonum animarum: but — pour le bien des âmes">in bonum animarum</span>
+    <span class="word participle" data-info="cessuram: participe futur féminin — devant contribuer">cessuram</span>,
+    <span class="word verb" data-info="censuit: parfait — il a jugé">censuit</span>
+    <span class="word infinitive" data-info="esse accipiendam: infinitif passif périphrastique — devoir être acceptée">esse accipiendam</span>.
+  </p>
+  <div id="info-box"></div>
+  <script>
+    const words = document.querySelectorAll('.word');
+    const infoBox = document.getElementById('info-box');
 
+    words.forEach(word => {
+      word.addEventListener('click', () => {
+        infoBox.textContent = word.getAttribute('data-info');
+        infoBox.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
 
-Franciscus Episcopus Servus Servorum Dei ad perpetuam rei memoriam
-    </p>
-  
-<p>
-Cum ad aptius aeternam dominici gregis salutem provehendam eiusque regimini
-facilius et efficacius consulendum petitum esset nuper ut dioecesis Chittagongensis,
-in Bangladesa, ita divideretur ut territorium Divisionum civilium Barisal et Dhaka
-a memorata dioecesi abstraheretur et in novam dioecesim constitueretur,
-Barisalensem nuncupandam, 
-    </p>
-  
-<p>
-  Congregatio pro Gentium Evangelizatione, omnibus
-mature perpensis habitoque pariter faventi voto Venerabilis Fratris Georgii
-Kocherry, Archiepiscopi titulo Othonensis atque in Bangladesa Apostolici Nuntii,
-admotam postulationem, in bonum animarum cessuram, censuit esse accipiendam.
-    </p>
-  
 <p>
 Nos igitur, Successor beati Petri et universalis Pater, talem sententiam libentes
 ratam habentes, summa Apostolica Nostra potestate haec decernimus. 
