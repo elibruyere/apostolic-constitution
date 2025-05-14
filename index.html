@@ -89,20 +89,6 @@
     <span class="word verb" data-info="censuit: parfait — il a jugé">censuit</span>
     <span class="word infinitive" data-info="esse accipiendam: infinitif passif périphrastique — devoir être acceptée">esse accipiendam</span>.
   </p>
-  <div id="info-box"></div>
-  <script>
-    const words = document.querySelectorAll('.word');
-    const infoBox = document.getElementById('info-box');
-
-    words.forEach(word => {
-      word.addEventListener('click', () => {
-        infoBox.textContent = word.getAttribute('data-info');
-        infoBox.style.display = 'block';
-      });
-    });
-  </script>
-</body>
-</html>
 
 <p>
  <span class="word nominative" data-info="Sujet - nominatif - nous (majestatif)">Nos</span>
@@ -162,6 +148,21 @@ Pontificatus Nostri tertio.
   
 <p>
 AAS, nr. 108, 5 Martii 2016, p. 208
+
+    <div id="info-box"></div>
+  <script>
+    const words = document.querySelectorAll('.word');
+    const infoBox = document.getElementById('info-box');
+
+    words.forEach(word => {
+      word.addEventListener('click', () => {
+        infoBox.textContent = word.getAttribute('data-info');
+        infoBox.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
 
   <ul>
     <li><a href="https://elibruyere.github.io/traduction-constitution/">Traduction</a></li>    
